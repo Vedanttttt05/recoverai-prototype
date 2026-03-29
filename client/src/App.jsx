@@ -38,7 +38,7 @@ const removeMed = (index) => {
     setTextInput('');
 
     try {
-      const res = await fetch('http://localhost:3001/analyze', {
+      const res = await fetch('https://recoverai-prototype.onrender.com/analyze', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ transcript, history, patient })
