@@ -13,6 +13,14 @@ const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash-lite' });
 
 const symptomLog = [];
 
+app.get('/health', (req, res) => {
+  res.status(200).json({
+    status: 'ok',
+    service: 'RecoverAI API',
+    timestamp: new Date(),
+    uptime: process.uptime()
+  });
+});
 app.post('/analyze', async (req, res) => {
   const { transcript, history, patient } = req.body;  // patient comes from frontend now
 
